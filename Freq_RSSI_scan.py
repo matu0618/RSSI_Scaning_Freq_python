@@ -19,9 +19,9 @@ def input_param():
     global data_count, scan_time, cycle_time
     while True:
         try:
-            data_count = int(input("測定回数を入力： "))
-            scan_time = float(input("RSSI測定のscan time[s]を入力： "))
-            cycle_time = float(input("何秒毎の測定かのcycle time[s]を入力： "))
+            data_count = int(input("観測データ数を入力： "))
+            scan_time = float(input("RSSI測定のscan時間[s]を入力： "))
+            cycle_time = float(input("測定間隔[s]を入力： "))
             startOrNot = input("測定を開始しますか？　y/n \n")
 
             #data_count = 15
@@ -66,7 +66,7 @@ def Scan_RSSI(addr_list, scan_time):
     now_dateTime = datetime.datetime.now()
 
     data_dict[addr_list[0]] = (str(now_dateTime)[11:19])
-        for device in devices:
+    for device in devices:
         if str(device.addr) in key_list:
             if str(device.addr) == addr_list[1]:
                 data_dict[addr_list[1]] = ((device.rssi))
@@ -149,7 +149,7 @@ def Judge_Scan(set_count, scan_time, cycle_time, error_count, addr_list):
             os.system("sudo systemctl daemon-reload")
             print("Retry")
             pass
-             except KeyboardInterrupt:
+        except KeyboardInterrupt:
             sys.exit()
 
 
