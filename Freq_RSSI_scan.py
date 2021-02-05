@@ -124,9 +124,9 @@ def Judge_Scan(set_count, scan_time, cycle_time, error_count, addr_list):
                 array_3 = np.array(update_data_dict[addr_list[3]])
 
                 print()
-                print("{0} {1}".format(len(array_1[~np.isnan(array_1)]), addr_list[1]))
-                print("{0} {1}".format(len(array_2[~np.isnan(array_2)]), addr_list[2]))
-                print("{0} {1}".format(len(array_3[~np.isnan(array_3)]), addr_list[3]))
+                print("{0}  nanあり：{1}  nanなし：{2}".format(addr_list[1], len(array_1), len(array_1[~np.isnan(array_1)])))
+                print("{0}  nanあり：{1}  nanなし：{2}".format(addr_list[2], len(array_2), len(array_2[~np.isnan(array_2)])))
+                print("{0}  nanあり：{1}  nanなし：{2}".format(addr_list[3], len(array_3), len(array_3[~np.isnan(array_3)])))
                 print()
 
                 count_1 = len(array_1[~np.isnan(array_1)])
